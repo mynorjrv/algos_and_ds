@@ -9,3 +9,27 @@ clang fib.ll -S
 ```
 
 were `-S` produces assembly and `-S -emit-llvm` produces the intermediate representation (LLVM IR).
+
+
+
+JAJAJAJA and some obscure stuff:
+
+ChatGPT tried to explain assembly like C xd which is strange but it kind of make sense.
+
+'''C
+rsp -= 8
+\*rsp = rbp
+rbp=rsp
+
+\*(int \*)(rbp-4) = -43
+\*(int \*)(rbp-8) = 19
+
+rax = rbp - 4
+
+\*(void \*\*)(rbp-16) = rbp-4
+
+rax = rbp-8
+'''
+
+
+The `*(int *)` and `*(void **)` is some crazy stuff about deferencing a pointer to a int, and deferrencing a pointer to a pointer xd sooooooo I guess Im learning about low level by osmosys(?) xdxdxd
